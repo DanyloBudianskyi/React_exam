@@ -3,15 +3,17 @@ import { BrowserRouter, Link, Route, Routes} from "react-router";
 import Home from "./pages/Home"
 import Catalog from "./pages/Catalog"
 import Config from "./pages/Config"
-
+import { CartProvider } from './context/CartContext.jsx'
 import './App.css'
 import ErrorPage from './pages/ErrorPage';
+import Cart from './components/Cart';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    <CartProvider>
       <BrowserRouter>
         <nav>
           <div className='mainPage'>
@@ -25,11 +27,13 @@ function App() {
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/catalog/products/:category' element={<Catalog/>}/>
-             <Route path='/catalog/config/:category/:elementId' element={<Config/>}/>
+            <Route path='/catalog/config/:category/:elementId' element={<Config/>}/>
+            <Route path='/cart' element={<Cart/>}/>
             <Route path='/*' element={<ErrorPage/>}/>
           </Routes>
         </main>
       </BrowserRouter>
+      </CartProvider>
     </>
   )
 }

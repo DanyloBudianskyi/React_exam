@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
 import { EXTRAS } from "./extras"
 
-const PizzaConfigurator = ({ item, config, setConfig }) => {
-  const [price, setPrice] = useState(0)
-
+const PizzaConfigurator = ({ item, config, setConfig, price, setPrice }) => {
+  
   useEffect(() => {
     const selectedSize = item.sizes.find(s => s.name === config.size)
 
@@ -84,7 +83,6 @@ const PizzaConfigurator = ({ item, config, setConfig }) => {
       </label>
 
       <div>Загальна ціна: {price} грн</div>
-      <button>Add to cart</button>
     </>
   )
 }

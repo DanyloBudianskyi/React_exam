@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 
-const DrinkConfigurator = ({item, config, setConfig}) => {
-    const [price, setPrice] = useState(item.volumes[0].price)
-
+const DrinkConfigurator = ({item, config, setConfig, price, setPrice}) => {
     useEffect(() => {
         const selected = item.volumes.find(v => v.size === config.volume)
         if(selected) setPrice(selected.price * config.quantity)
@@ -29,8 +27,6 @@ const DrinkConfigurator = ({item, config, setConfig}) => {
                     onChange={(e) => setConfig({ ...config, quantity: parseInt(e.target.value) })}
                 />
                 <div>Price: {price} uah</div>
-
-                <button>Add to cart</button>
             </label>
         </>
     )
