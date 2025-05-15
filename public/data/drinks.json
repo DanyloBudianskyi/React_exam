@@ -1,0 +1,49 @@
+[
+  {
+    "id": "coca-cola",
+    "name": "Coca-Cola",
+    "description": "Газований безалкогольний напій з оригінальним смаком коли",
+    "volumes": [
+      { "size": "0.33 л", "price": 20 },
+      { "size": "0.5 л", "price": 25 },
+      { "size": "1 л", "price": 38 }
+    ]
+  },
+  {
+    "id": "pepsi",
+    "name": "Pepsi",
+    "description": "Освіжаючий газований напій з насиченим смаком коли",
+    "volumes": [
+      { "size": "0.33 л", "price": 20},
+      { "size": "0.5 л", "price": 24 },
+      { "size": "1 л", "price": 36 }
+    ]
+  },
+  {
+    "id": "sprite",
+    "name": "Sprite",
+    "description": "Газований лимонад з ароматом лимона та лайму",
+    "volumes": [
+      { "size": "0.33 л", "price": 18 },
+      { "size": "0.5 л", "price": 27 }
+    ]
+  },
+  {
+    "id": "fanta",
+    "name": "Fanta",
+    "description": "Солодкий газований напій з яскравим апельсиновим смаком",
+    "volumes": [
+      { "size": "0.5 л", "price": 26 },
+      { "size": "1 л", "price": 39 }
+    ]
+  },
+  {
+    "id": "morshinska",
+    "name": "Моршинська негазована",
+    "description": "Мінеральна природна вода без газу",
+    "volumes": [
+      { "size": "0.5 л", "price": 16 },
+      { "size": "1 л", "price": 22 }
+    ]
+  }
+]
