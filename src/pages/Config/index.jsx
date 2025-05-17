@@ -32,7 +32,7 @@ const Config = () => {
         
             if(selectedItem){
                 if(category === "pizza"){
-                    setConfig({ size:selectedItem.sizes[1].name, doughType:selectedItem.doughTypes[0], extras:[], quantity: 1})
+                    setConfig({ size:selectedItem.sizes[0].name, doughType:selectedItem.doughTypes[0], extras:[], quantity: 1})
                 }
                 else if(category ==="drinks"){
                     setConfig({volume: selectedItem.volumes[0].size, quantity: 1})

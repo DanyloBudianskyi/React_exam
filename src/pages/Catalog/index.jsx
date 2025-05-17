@@ -1,7 +1,8 @@
 import { Link, useParams } from "react-router"
-import styles from "./Catalog.module.scss"
 import { useEffect, useState } from "react"
 import { fetchData } from "../../hooks/fetchData"
+import PizzaItem from "../../components/PizzaItem"
+import DrinkItem from "../../components/DrinkItem"
 
 const Catalog = () => {
     const {category} = useParams()
@@ -13,13 +14,10 @@ const Catalog = () => {
 
     return(
         <div>
-          {data.map((item) => (
-            <div key={item.id}>
-              <h3>{item.name}</h3>
-              <h4>{item.description}</h4>
-              <Link to={`/catalog/config/${category}/${item.id}`}><button>Customize</button></Link>
-            </div>
-          ))}
+          {data.map((item) => {
+            if(category === "pizza") return <PizzaItem key={item.id} item={item}/>
+            else if(category === "drinks") return <DrinkItem key={item.id} item={item}/>
+          })}
         </div>
     )
 }
