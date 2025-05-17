@@ -11,7 +11,7 @@ const PizzaConfigurator = ({ item, config, setConfig, price, setPrice }) => {
       return sum + (found ? found.price : 0)
     }, 0)
 
-    setPrice((selectedSize.price + extrasPrice) * config.quantity)
+    setPrice(selectedSize.price + extrasPrice)
   }, [config, item])
 
   const handleExtraChange = (e) => {
@@ -82,7 +82,7 @@ const PizzaConfigurator = ({ item, config, setConfig, price, setPrice }) => {
         />
       </label>
 
-      <div>Загальна ціна: {price} грн</div>
+      <div>Загальна ціна: {price * config.quantity} грн</div>
     </>
   )
 }

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const DrinkConfigurator = ({item, config, setConfig, price, setPrice}) => {
     useEffect(() => {
         const selected = item.volumes.find(v => v.size === config.volume)
-        if(selected) setPrice(selected.price * config.quantity)
+        if(selected) setPrice(selected.price)
     }, [config.volume, config.quantity, item.volumes])
 
     return(
@@ -26,7 +26,7 @@ const DrinkConfigurator = ({item, config, setConfig, price, setPrice}) => {
                     value={config.quantity}
                     onChange={(e) => setConfig({ ...config, quantity: parseInt(e.target.value) })}
                 />
-                <div>Price: {price} uah</div>
+                <div>Price: {price * config.quantity} uah</div>
             </label>
         </>
     )

@@ -6,7 +6,8 @@ import Config from "./pages/Config"
 import { CartProvider } from './context/CartContext.jsx'
 import './App.css'
 import ErrorPage from './pages/ErrorPage';
-import Cart from './components/Cart';
+import Checkout from './pages/Checkout';
+import Cart from './pages/Cart';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,7 +15,7 @@ function App() {
   return (
     <>
     <CartProvider>
-      <BrowserRouter>
+      <BrowserRouter> 
         <nav>
           <div className='mainPage'>
             <Link to="/"><h3>Pizza</h3></Link>
@@ -30,6 +31,7 @@ function App() {
             <Route path='/catalog/config/:category/:elementId' element={<Config/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/*' element={<ErrorPage/>}/>
+            <Route path='/checkout' element={<Checkout/>}/>
           </Routes>
         </main>
       </BrowserRouter>
