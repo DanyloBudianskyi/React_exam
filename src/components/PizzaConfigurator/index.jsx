@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { EXTRAS } from "./extras"
+import styles from "./PizzaConfigurator.module.scss"
 
-const PizzaConfigurator = ({ item, config, setConfig, price, setPrice }) => {
+const PizzaConfigurator = ({ item, config, setConfig, price, setPrice, onAddToCart}) => {
   
   useEffect(() => {
     const selectedSize = item.sizes.find(s => s.name === config.size)
@@ -34,7 +35,13 @@ const PizzaConfigurator = ({ item, config, setConfig, price, setPrice }) => {
 
   return (
     <>
-      <label>Розмір:
+    <div className={styles.wrapper}>
+      <h1 className={styles.title}>{item.name}</h1>
+      <div className={styles.photo}>
+        <img src="https://png.pngtree.com/png-clipart/20240404/original/pngtree-pizza-png-image_14753640.png" alt="" />
+      </div>
+      <div className={styles.optionsBlock}>
+        <label className={styles.size}>Розмір:
         <select
           value={config.size}
           onChange={(e) => setConfig({ ...config, size: e.target.value })}
@@ -47,7 +54,7 @@ const PizzaConfigurator = ({ item, config, setConfig, price, setPrice }) => {
         </select>
       </label>
 
-      <label>Тип тіста:
+      <label className={styles.doughType}>Тип тіста:
         <select
           value={config.doughType}
           onChange={(e) => setConfig({ ...config, doughType: e.target.value })}
@@ -58,7 +65,7 @@ const PizzaConfigurator = ({ item, config, setConfig, price, setPrice }) => {
         </select>
       </label>
 
-      <fieldset>
+      <fieldset className={styles.extra}>
         <legend>Додаткові інгредієнти:</legend>
         {EXTRAS.map(extra => (
           <label key={extra.name}>
@@ -72,17 +79,23 @@ const PizzaConfigurator = ({ item, config, setConfig, price, setPrice }) => {
           </label>
         ))}
       </fieldset>
-
-      <label>Кількість піц:
+      </div>
+      
+      <label className={styles.quantity}>Кількість піц:
         <input
           type="number"
           value={config.quantity}
           min="1"
           onChange={handleQuantityChange}
+          className={styles.quantityInput}
         />
       </label>
 
-      <div>Загальна ціна: {price * config.quantity} грн</div>
+      <div className={styles.totalPrice}>Загальна ціна: {price * config.quantity} грн</div>
+      <button onClick={onAddToCart} className={styles.addToCartBtn}>Add to cart</button>
+      
+    </div>
+    
     </>
   )
 }

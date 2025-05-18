@@ -38,7 +38,7 @@ const Checkout = () => {
                     <strong>{item.name}</strong> — {item.quantity} шт. — {item.price * item.quantity} грн
                     {item.config && (
                     <ul style={{ marginLeft: "1rem", fontStyle: "italic" }}>
-                        {Object.entries(item.config).map(([key, value]) => (
+                        {Object.entries(item.config).filter(([key]) => key !== "quantity").map(([key, value]) => (
                             <li key={key}>
                                 {configLabels[key]}: {Array.isArray(value) ? value.join(", ") : value}
                             </li>

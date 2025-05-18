@@ -18,7 +18,7 @@ function App() {
       <BrowserRouter> 
         <nav>
           <div className='mainPage'>
-            <Link to="/"><h3>Pizza</h3></Link>
+            <Link to="/"><h3>Home</h3></Link>
           </div>
           <div className='cart'> 
             <Link to="/cart"><h3>Cart</h3></Link>

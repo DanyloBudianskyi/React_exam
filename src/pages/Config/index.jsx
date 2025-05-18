@@ -48,12 +48,12 @@ const Config = () => {
             {!item || !config ? <p>Завантаження...</p> : (
                 <>
                     {category === "drinks" && (
-                    <DrinkConfigurator item={item} config={config} setConfig={setConfig}  price={price} setPrice={setPrice} />
+                    <DrinkConfigurator item={item} config={config} setConfig={setConfig}  price={price} setPrice={setPrice} onAddToCart={handleAddToCart}/>
                     )}
                     {category === "pizza" && (
-                    <PizzaConfigurator item={item} config={config} setConfig={setConfig} price={price} setPrice={setPrice} />
+                    <PizzaConfigurator item={item} config={config} setConfig={setConfig} price={price} setPrice={setPrice} onAddToCart={handleAddToCart}/>
                     )}
-                    <button onClick={handleAddToCart}>Add to cart</button>
+                    
                 </>
             )}
         </div>

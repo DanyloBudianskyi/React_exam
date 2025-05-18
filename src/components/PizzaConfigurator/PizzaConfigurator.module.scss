@@ -1,0 +1,123 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 600px;
+    margin: auto;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    img {
+        max-width: 100%;
+        max-height: 500px;
+    }
+}
+
+.title{
+    color: #e64b3c;
+}
+
+.size,.doughType{
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    select{
+        width: 220px;
+        text-align: center;
+        border: 1px solid gray;
+        border-radius: 15px;
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+}
+
+.extra {
+  margin: 24px 0;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #fffdf8;
+  width: 100%;
+
+  legend {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e64b3c;
+    margin-bottom: 12px;
+    padding: 0 8px;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+      accent-color: #e64b3c;
+    }
+
+    &:hover {
+      color: #c93f30;
+    }
+  }
+}
+
+.quantity{ 
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+
+    input{
+        width: 100px;
+        text-align: center;
+        border: 1px solid gray;
+        border-radius: 15px;
+        padding: 10px;
+        font-size: 18px;
+    }
+}
+
+.totalPrice {
+  font-size: 28px;
+  font-weight: bold;
+  color: #e64b3c;
+  margin-top: 20px;
+}
+
+.addToCartBtn{
+    background-color: #e64b3c;
+    color:white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 24px;
+    &:hover{
+      background-color: #af3a2f;
+    }
+}
+
+.optionsBlock {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}

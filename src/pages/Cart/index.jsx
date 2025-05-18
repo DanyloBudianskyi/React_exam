@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { useCart } from "../../context/CartContext"
+import styles from "./Cart.module.scss"
 
 const configLabels = {
   doughType: "Тісто",
@@ -16,14 +17,16 @@ const Cart = () => {
     return <p>Корзина порожня.</p>;
   }
   return (
-    <div>
+    <div className={styles.wrapper}>
       <h2>Корзина</h2>
       <ul>
         {cart.map((item, index) => (
-          <li key={index} style={{ marginBottom: 10 }}>
-            <strong>{item.name}</strong> — {item.quantity} шт.
-            <br />
-            <small>Конфігурація: 
+          <li key={index} className={styles.container}>
+            <img src=""  className={styles.image} />
+            <div className={styles.cartItem}>
+              <strong>{item.name}</strong> — {item.quantity} шт.
+              <br />
+              <small>Конфігурація: 
                 <ul style={{ marginLeft: "1rem", fontStyle: "italic" }}>
                   {Object.entries(item.config).filter(([key]) => key !== "quantity").map(([key, value]) => (
                     <li key={key}>
@@ -31,29 +34,31 @@ const Cart = () => {
                     </li>
                   ))}
                 </ul>
-            </small>
-            <br />
-            <label>
-              Кількість:
+              </small>
+              <br />
+              <label>
+                Кількість:
                 <button onClick={(e) => updateQuantity(index, item.quantity - 1)}>-</button>
-              <input
-                type="number"
-                min="1"
-                value={item.quantity}
-                onChange={(e) => updateQuantity(index, parseInt(e.target.value))}
-                style={{ width: "50px", marginLeft: "5px" }}
-              />
-              <button onClick={(e) => updateQuantity(index, item.quantity + 1)}>+</button>
-            </label>
-            <button onClick={() => deleteFromCart(index)} style={{ marginLeft: "10px" }}>
-              Видалити
+                <input
+                  type="number"
+                  min="1"
+                  value={item.quantity}
+                  onChange={(e) => updateQuantity(index, parseInt(e.target.value))}
+                  
+                />
+                <button onClick={(e) => updateQuantity(index, item.quantity + 1)}>+</button>
+              </label>
+            </div>
+            
+            <button onClick={() => deleteFromCart(index)} className={styles.deleteBtn}>
+              X
             </button>
           </li>
         ))}
       </ul>
       <button onClick={clearCart}>Очистити корзину</button>
       <h2>Totat price: {totalPrice}</h2>
-      <Link to="/checkout"><button>Перейти к замовленню</button></Link>
+      <Link to="/checkout"><button className={styles.checkoutBtn}>Перейти к замовленню</button></Link>
     </div>
   );
 };
