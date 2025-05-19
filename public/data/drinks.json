@@ -2,6 +2,7 @@
   {
     "id": "coca-cola",
     "name": "Coca-Cola",
+    "imgSrc": "https://icons.veryicon.com/png/Food%20%26%20Drinks/Coke%20%26%20Pepsi%20Can/Coca%20Cola%20Can.png",
     "description": "Газований безалкогольний напій з оригінальним смаком коли",
     "volumes": [
       { "size": "0.33 л", "price": 20 },
@@ -12,6 +13,7 @@
   {
     "id": "pepsi",
     "name": "Pepsi",
+    "imgSrc": "https://www.pngmart.com/files/23/Pepsi-Can-PNG-Isolated-HD.png",
     "description": "Освіжаючий газований напій з насиченим смаком коли",
     "volumes": [
       { "size": "0.33 л", "price": 20},
@@ -22,6 +24,7 @@
   {
     "id": "sprite",
     "name": "Sprite",
+    "imgSrc": "https://pngimg.com/d/sprite_PNG98773.png",
     "description": "Газований лимонад з ароматом лимона та лайму",
     "volumes": [
       { "size": "0.33 л", "price": 18 },
@@ -31,6 +34,7 @@
   {
     "id": "fanta",
     "name": "Fanta",
+    "imgSrc": "https://pngimg.com/d/fanta_PNG46.png",
     "description": "Солодкий газований напій з яскравим апельсиновим смаком",
     "volumes": [
       { "size": "0.5 л", "price": 26 },
@@ -38,9 +42,10 @@
     ]
   },
   {
-    "id": "morshinska",
-    "name": "Моршинська негазована",
-    "description": "Мінеральна природна вода без газу",
+    "id": "aquafina",
+    "name": "Aquafina",
+    "imgSrc": "https://purepng.com/public/uploads/large/purepng.com-ice-water-bottle-aquafinabottle-water-drink-aquafina-9415246348499t1u0.png",
+    "description": "Очищена питна вода без газу зі збалансованим смаком",
     "volumes": [
       { "size": "0.5 л", "price": 16 },
       { "size": "1 л", "price": 22 }

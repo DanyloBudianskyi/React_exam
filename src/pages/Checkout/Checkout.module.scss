@@ -1,0 +1,58 @@
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+
+  span {
+    color: rgb(172, 0, 0);
+    font-size: 14px;
+    margin-top: 4px;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  
+  input {
+    flex: 1;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+  input[type="reset"] {
+    background-color: #e74c3c;
+  }
+}

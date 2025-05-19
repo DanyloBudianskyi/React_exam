@@ -21,7 +21,8 @@ const Config = () => {
             name: item.name,
             config,
             quantity: Number(config.quantity),
-            price
+            price,
+            imgSrc: item.imgSrc
         })
     }
 

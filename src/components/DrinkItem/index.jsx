@@ -5,7 +5,7 @@ const DrinkItem = ({item}) => {
     return(
         <div className={styles.card}>
             <div className={styles.image}>
-                <img src="https://icons.veryicon.com/png/Food%20%26%20Drinks/Coke%20%26%20Pepsi%20Can/Coca%20Cola%20Can.png" alt="" />
+                <img src={item.imgSrc} alt="" />
             </div>
             <div className={styles.info}>
                 <h3>{item.name}</h3>

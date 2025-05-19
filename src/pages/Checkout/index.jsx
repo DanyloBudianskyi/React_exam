@@ -1,6 +1,7 @@
 import { ErrorMessage, Field, Form, FormikProvider, useFormik } from "formik"
 import { useCart } from "../../context/CartContext"
 import { SCHEMA_CHECKOUT } from "./schemaValidate"
+import styles from "./Checkout.module.scss"
 
 const initialValues = {
     name: "",
@@ -22,6 +23,7 @@ const Checkout = () => {
 
     const handleSubmit = () => {
         clearCart()
+        formik.resetForm()
     }
 
     const formik = useFormik({
@@ -32,12 +34,13 @@ const Checkout = () => {
     const {dirty} = formik
     return(
         <>
+        <div className={styles.wrapper}>
             <ul>
                 {cart.map((item, idx) => (
                 <li key={idx}>
                     <strong>{item.name}</strong> — {item.quantity} шт. — {item.price * item.quantity} грн
                     {item.config && (
-                    <ul style={{ marginLeft: "1rem", fontStyle: "italic" }}>
+                    <ul style={{ marginLeft: "20px", fontStyle: "italic" }}>
                         {Object.entries(item.config).filter(([key]) => key !== "quantity").map(([key, value]) => (
                             <li key={key}>
                                 {configLabels[key]}: {Array.isArray(value) ? value.join(", ") : value}
@@ -49,8 +52,8 @@ const Checkout = () => {
             ))}
             </ul>
             <p><strong>Загальна сума:</strong> {totalPrice} грн</p>
-            <FormikProvider value={formik}>
-                <Form>
+            <FormikProvider value={formik} >
+                <Form className={styles.form}>
                     <div>
                         <Field type="text" name="name" placeholder="Ім'я"/>
                         <ErrorMessage component="span" name="name"/>
@@ -67,12 +70,13 @@ const Checkout = () => {
                         <Field type="text" name="comment" placeholder="Коментар до замовлення(необов'язково)"/>
                         <ErrorMessage component="span" name="comment"/>
                     </div>
-                    <div>
+                    <div className={styles.buttons}>
                         <input disabled={!dirty} type="submit" value="Підтвердити замовлення"/>
                         <input type="reset" value="Очистити форму"/>
                     </div>
                 </Form>
             </FormikProvider>
+            </div>
         </>
     )
 }

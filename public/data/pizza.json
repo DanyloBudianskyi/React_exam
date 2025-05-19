@@ -2,6 +2,7 @@
   {
     "id": "pepperoni_12900",
     "name": "Пепероні",
+    "imgSrc": "https://png.pngtree.com/png-clipart/20230928/original/pngtree-pepperoni-pizza-isolated-with-clipping-path-png-image_13007806.png",
     "description": "Соус, сир моцарела, пепероні",
     "sizes": [
       { "name": "мала", "price": 100 },
@@ -13,6 +14,7 @@
   {
     "id": "margherita_12001",
     "name": "Маргарита",
+    "imgSrc": "https://png.pngtree.com/png-clipart/20230912/original/pngtree-top-view-of-pizza-margherita-delicious-picture-image_13032122.png",
     "description": "Соус, сир моцарела, базилік",
     "sizes": [
       { "name": "мала", "price": 90 },
@@ -24,6 +26,7 @@
   {
     "id": "four_cheese_12002",
     "name": "Чотири сири",
+    "imgSrc": "https://png.pngtree.com/png-clipart/20240926/original/pngtree-four-cheese-pizza-isolated-on-white-background-png-image_16097868.png",
     "description": "Соус, моцарела, дорблю, пармезан, гауда",
     "sizes": [
       { "name": "мала", "price": 110 },
@@ -35,6 +38,7 @@
   {
     "id": "veggie_12003",
     "name": "Овочева",
+    "imgSrc": "https://static.vecteezy.com/system/resources/previews/046/861/103/non_2x/delicious-veggie-pizza-isolated-on-a-transparent-background-free-png.png",
     "description": "Соус, помідори, перець, броколі, кукурудза",
     "sizes": [
       { "name": "мала", "price": 95 },
@@ -46,6 +50,7 @@
   {
     "id": "meat_lovers_12004",
     "name": "М’ясна",
+    "imgSrc": "https://png.pngtree.com/png-clipart/20231111/original/pngtree-the-meat-lovers-pizza-opera-on-a-plate-png-image_13534976.png",
     "description": "Соус, бекон, салямі, шинка, сир",
     "sizes": [
       { "name": "мала", "price": 120 },

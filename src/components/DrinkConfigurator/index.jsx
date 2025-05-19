@@ -12,7 +12,7 @@ const DrinkConfigurator = ({item, config, setConfig, price, setPrice, onAddToCar
         <div className={styles.wrapper}>
             <h1 className={styles.title}>{item.name}</h1>
             <div className={styles.photo}>
-                <img src="https://icons.veryicon.com/png/Food%20%26%20Drinks/Coke%20%26%20Pepsi%20Can/Coca%20Cola%20Can.png" alt="" />
+                <img src={item.imgSrc} alt="" />
             </div>
             <div className={styles.optionsBlock}>
                 <label className={styles.volumes}>Об’єм:

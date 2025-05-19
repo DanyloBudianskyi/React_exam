@@ -38,7 +38,7 @@ const PizzaConfigurator = ({ item, config, setConfig, price, setPrice, onAddToCa
     <div className={styles.wrapper}>
       <h1 className={styles.title}>{item.name}</h1>
       <div className={styles.photo}>
-        <img src="https://png.pngtree.com/png-clipart/20240404/original/pngtree-pizza-png-image_14753640.png" alt="" />
+        <img src={item.imgSrc} alt="" />
       </div>
       <div className={styles.optionsBlock}>
         <label className={styles.size}>Розмір:

@@ -5,7 +5,7 @@ const PizzaItem = ({item}) => {
     return(
         <div className={styles.card}>
             <div className={styles.image}>
-                <img src="https://png.pngtree.com/png-clipart/20240404/original/pngtree-pizza-png-image_14753640.png" alt="" />
+                <img src={item.imgSrc} alt="" />
             </div>
             <div className={styles.info}>
                 <h3>{item.name}</h3>
