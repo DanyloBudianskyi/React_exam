@@ -3,7 +3,7 @@ nav{
   text-align: center;
   border-bottom: 1px solid rgb(212, 212, 212) ;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 40px;
   position: fixed;
   top: 0;
@@ -17,4 +17,10 @@ nav h3{
 }
 main {
   padding-top: 70px;
+}
+
+nav div:last-child {
+  font-size: 40px;
+  padding: 10px; 
+  cursor: pointer;
 }

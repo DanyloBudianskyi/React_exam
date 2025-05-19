@@ -8,6 +8,8 @@ import './App.css'
 import ErrorPage from './pages/ErrorPage';
 import Checkout from './pages/Checkout';
 import Cart from './pages/Cart';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,7 +23,7 @@ function App() {
             <Link to="/"><h3>Home</h3></Link>
           </div>
           <div className='cart'> 
-            <Link to="/cart"><h3>Cart</h3></Link>
+            <Link to="/cart"><FontAwesomeIcon icon={faCartShopping} /></Link>
           </div>
         </nav>
         <main>
