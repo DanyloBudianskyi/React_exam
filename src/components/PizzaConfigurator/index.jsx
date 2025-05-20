@@ -3,7 +3,13 @@ import { EXTRAS } from "./extras"
 import styles from "./PizzaConfigurator.module.scss"
 
 const PizzaConfigurator = ({ item, config, setConfig, price, setPrice, onAddToCart}) => {
-  
+  const [alert, setAlert] = useState(false)
+
+  const showAlert = () => {
+    setAlert(true)
+    setTimeout(() => setAlert(false),3000)
+  }
+
   useEffect(() => {
     const selectedSize = item.sizes.find(s => s.name === config.size)
 
@@ -92,8 +98,13 @@ const PizzaConfigurator = ({ item, config, setConfig, price, setPrice, onAddToCa
       </label>
 
       <div className={styles.totalPrice}>Загальна ціна: {price * config.quantity} грн</div>
-      <button onClick={onAddToCart} className={styles.addToCartBtn}>Add to cart</button>
-      
+      <button onClick={() => {
+        onAddToCart(); 
+        showAlert()
+        }} 
+        className={styles.addToCartBtn}>
+          Add to cart</button>
+      {alert && <div className={styles.itemAddedToCartAlert}>Товар додано до кошика</div>}
     </div>
     
     </>

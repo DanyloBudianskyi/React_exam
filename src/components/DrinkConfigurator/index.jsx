@@ -1,7 +1,14 @@
-import { useEffect} from "react"
+import { useEffect, useState} from "react"
 import styles from "./DrinkConfigurator.module.scss"
 
 const DrinkConfigurator = ({item, config, setConfig, price, setPrice, onAddToCart}) => {
+  const [alert, setAlert] = useState(false)
+
+  const showAlert = () => {
+    setAlert(true)
+    setTimeout(() => setAlert(false),3000)
+  }
+    
     useEffect(() => {
         const selected = item.volumes.find(v => v.size === config.volume)
         if(selected) setPrice(selected.price)
@@ -38,7 +45,11 @@ const DrinkConfigurator = ({item, config, setConfig, price, setPrice, onAddToCar
 
             
             <div className={styles.totalPrice}>Загальна ціна: {price * config.quantity} грн</div>
-            <button onClick={onAddToCart} className={styles.addToCartBtn}>Add to cart</button>
+            <button onClick={() => {
+                onAddToCart(); 
+                showAlert()
+            }} className={styles.addToCartBtn}>Add to cart</button>
+            {alert && <div className={styles.itemAddedToCartAlert}>Товар додано до кошика</div>}
         </div>
         </>
     )

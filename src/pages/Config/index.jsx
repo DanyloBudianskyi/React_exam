@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router"
-import { fetchData } from "../../hooks/fetchData"
+import { useFetchData } from "../../hooks/fetchData"
 import DrinkConfigurator from "../../components/DrinkConfigurator"
 import PizzaConfigurator from "../../components/PizzaConfigurator"
 import { useCart } from "../../context/CartContext"
 
 const Config = () => {
     const {category, elementId} = useParams()
-    const {data, isLoading, error} = fetchData(`/data/${category}.json`)
+    const {data} = useFetchData(`/data/${category}.json`)
 
     const [item, setItem] = useState()
     const [price, setPrice] = useState(0)
@@ -49,7 +49,7 @@ const Config = () => {
             {!item || !config ? <p>Завантаження...</p> : (
                 <>
                     {category === "drinks" && (
-                    <DrinkConfigurator item={item} config={config} setConfig={setConfig}  price={price} setPrice={setPrice} onAddToCart={handleAddToCart}/>
+                    <DrinkConfigurator item={item} config={config} setConfig={setConfig} price={price} setPrice={setPrice} onAddToCart={handleAddToCart}/>
                     )}
                     {category === "pizza" && (
                     <PizzaConfigurator item={item} config={config} setConfig={setConfig} price={price} setPrice={setPrice} onAddToCart={handleAddToCart}/>

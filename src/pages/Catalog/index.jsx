@@ -1,12 +1,12 @@
 import { Link, useParams } from "react-router"
 import { useEffect, useState } from "react"
-import { fetchData } from "../../hooks/fetchData"
+import { useFetchData } from "../../hooks/fetchData"
 import PizzaItem from "../../components/PizzaItem"
 import DrinkItem from "../../components/DrinkItem"
 
 const Catalog = () => {
     const {category} = useParams()
-    const {data, isLoading, error} = fetchData(`/data/${category}.json`)
+    const {data, isLoading, error} = useFetchData(`/data/${category}.json`)
 
     useEffect(() => {
       document.title = "Catalog"
