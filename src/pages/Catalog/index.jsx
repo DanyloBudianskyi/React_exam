@@ -12,7 +12,7 @@ const Catalog = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
-      document.title = "Catalog"
+      document.title = "Каталог"
     }, [category]);
 
     return(

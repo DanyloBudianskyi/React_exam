@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, FormikProvider, useFormik } from "formik"
 import { useCart } from "../../context/CartContext"
 import { SCHEMA_CHECKOUT } from "./schemaValidate"
 import styles from "./Checkout.module.scss"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const initialValues = {
     name: "",
@@ -23,6 +23,9 @@ const Checkout = () => {
     const {cart, clearCart, totalPrice} = useCart()
     const [isSubmited, setIsSubmited] = useState(false)
 
+    useEffect(() => {
+        document.title = "Оплата"
+    },[])
 
     const handleSubmit = () => {
         clearCart()

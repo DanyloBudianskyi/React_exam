@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { useCart } from "../../context/CartContext"
 import styles from "./Cart.module.scss"
+import { useEffect } from "react";
 
 const configLabels = {
   doughType: "Тісто",
@@ -21,6 +22,11 @@ const Cart = () => {
       </div> 
     ) 
   }
+
+  useEffect(() => {
+    document.title = "Кошик"
+  }, [])
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.price}>      

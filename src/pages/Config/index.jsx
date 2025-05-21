@@ -45,7 +45,7 @@ const Config = () => {
         }
     }, [data, elementId])
     useEffect(() => {
-        document.title = "Config page"
+        document.title = "Конфігурація"
     },[item])
     return(
         <div>

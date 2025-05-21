@@ -18,10 +18,10 @@ function App() {
       <BrowserRouter> 
         <nav>
           <div className='mainPage'>
-            <Link to="/"><h3>Home</h3></Link>
+            <Link to="/"><h3>Головна</h3></Link>
           </div>
           <div className='cart'> 
-            <Link to="/cart"><FontAwesomeIcon icon={faCartShopping} /></Link>
+            <Link to="/cart" style={{color:"#e64b3c"}}><FontAwesomeIcon icon={faCartShopping} /></Link>
           </div>
         </nav>
         <main>

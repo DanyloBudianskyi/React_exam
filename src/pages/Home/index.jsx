@@ -5,7 +5,7 @@ import styles from "./Home.module.scss"
 
 const Home = () => {
     useEffect(() => {
-        document.title = "Home page"
+        document.title = "Головна"
     },[])
     return(
         <div className={styles.wrap}>
