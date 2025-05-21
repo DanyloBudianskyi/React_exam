@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router"
+import { useNavigate, useParams } from "react-router"
 import { useFetchData } from "../../hooks/fetchData"
 import DrinkConfigurator from "../../components/DrinkConfigurator"
 import PizzaConfigurator from "../../components/PizzaConfigurator"
 import { useCart } from "../../context/CartContext"
+import styles from "../Catalog/Catalog.module.scss"
 
 const Config = () => {
     const {category, elementId} = useParams()
@@ -14,6 +15,8 @@ const Config = () => {
     const [config, setConfig] = useState()
 
     const {addToCart} = useCart()
+
+    const navigate = useNavigate()
 
     const handleAddToCart = () => {
         addToCart({
@@ -48,6 +51,7 @@ const Config = () => {
         <div>
             {!item || !config ? <p>Завантаження...</p> : (
                 <>
+                    <button onClick={() => navigate(-1)} className={styles.goBackBtn}>← Назад</button>
                     {category === "drinks" && (
                     <DrinkConfigurator item={item} config={config} setConfig={setConfig} price={price} setPrice={setPrice} onAddToCart={handleAddToCart}/>
                     )}

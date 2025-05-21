@@ -2,6 +2,7 @@ import { ErrorMessage, Field, Form, FormikProvider, useFormik } from "formik"
 import { useCart } from "../../context/CartContext"
 import { SCHEMA_CHECKOUT } from "./schemaValidate"
 import styles from "./Checkout.module.scss"
+import { useState } from "react"
 
 const initialValues = {
     name: "",
@@ -20,10 +21,14 @@ const configLabels = {
 
 const Checkout = () => {
     const {cart, clearCart, totalPrice} = useCart()
+    const [isSubmited, setIsSubmited] = useState(false)
+
 
     const handleSubmit = () => {
         clearCart()
         formik.resetForm()
+        setIsSubmited(true)
+        setTimeout(() => setIsSubmited(false), 5000)
     }
 
     const formik = useFormik({
@@ -76,6 +81,7 @@ const Checkout = () => {
                     </div>
                 </Form>
             </FormikProvider>
+            {isSubmited && (<div className={styles.thankYou}>Дякуємо за замовлення! </div>)}
             </div>
         </>
     )

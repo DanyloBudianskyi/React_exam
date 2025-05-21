@@ -39,7 +39,6 @@ const Cart = () => {
                   {Object.entries(item.config).filter(([key]) => key !== "quantity").map(([key, value]) => (
                     <li key={key}>
                       {configLabels[key]}: {Array.isArray(value) ? value.join(", ") : value}
-                      {console.log(item)}
                     </li>
                   ))}
                 </ul>
